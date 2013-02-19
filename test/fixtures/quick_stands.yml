@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  do_today: MyString
+  did_yesterday: MyString
+  blockers: MyString
+  notes: MyString
+  rating: 1
+  develop: MyString
+  email: MyString
+
+two:
+  do_today: MyString
+  did_yesterday: MyString
+  blockers: MyString
+  notes: MyString
+  rating: 1
+  develop: MyString
+  email: MyString

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+==================== <%= @quick_stand.created_at.strftime("%A, %B #{@quick_stand.created_at.day.ordinalize}, %Y") %> =========================
+<p>
+  <b>Developer:</b>
+  <%= @quick_stand.developer %>
+</p>
+
+<p>
+  <b>Did yesterday:</b>
+  <%= @quick_stand.did_yesterday %>
+</p>
+
+<p>
+  <b>Do today:</b>
+  <%= @quick_stand.do_today %>
+</p>
+
+<p>
+  <b>Blockers:</b>
+  <%= @quick_stand.blockers %>
+</p>
+
+<p>
+  <b>Cards and Notes:</b>
+  <%= @quick_stand.notes %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @quick_stand.rating %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @quick_stand.email %>
+</p>
+================================================================
+<br/>
+<%= link_to 'Edit', edit_quick_stand_path(@quick_stand) %> |
+<%= link_to 'Back', quick_stands_path %>

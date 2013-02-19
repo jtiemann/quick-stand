@@ -1,0 +1,45 @@
+<%= form_for(@quick_stand) do |f| %>
+  <% if @quick_stand.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quick_stand.errors.count, "error") %> prohibited this quick_stand from being saved:</h2>
+
+      <ul>
+      <% @quick_stand.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :do_today %><br />
+    <%= f.text_field :do_today %>
+  </div>
+  <div class="field">
+    <%= f.label :did_yesterday %><br />
+    <%= f.text_field :did_yesterday %>
+  </div>
+  <div class="field">
+    <%= f.label :blockers %><br />
+    <%= f.text_field :blockers %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br />
+    <%= f.text_field :notes %>
+  </div>
+  <div class="field">
+    <%= f.label :rating %><br />
+    <%= f.number_field :rating %>
+  </div>
+  <div class="field">
+    <%= f.label :developer %><br />
+    <%= f.text_field :developer %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

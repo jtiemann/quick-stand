@@ -1,0 +1,55 @@
+
+<h1>Listing quick_stands</h1>
+
+<table>
+  <tr>
+    <th>Created_at</th>
+    <th>Developer</th>
+    <th>Do today</th>
+    <th>Did yesterday</th>
+    <th>Blockers</th>
+    <th>Notes</th>
+    <th>Rating</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+<%= search_form_for @q do |f| %>
+  <%= f.label :developer_cont %>
+  <%= f.text_field :developer_cont %>
+
+  <%= f.submit %>
+<% end %>
+<% @quick_stands.each do |quick_stand| %>
+  <tr>
+    <td><b><%= quick_stand.created_at.strftime("%A, %B #{quick_stand.created_at.day.ordinalize}, %Y") %></b></td>
+    <td><%= quick_stand.developer %></td>
+    <td><%= quick_stand.do_today %></td>
+    <td><%= quick_stand.did_yesterday %></td>
+    <td><%= quick_stand.blockers %></td>
+    <td><%= quick_stand.notes %></td>
+    <td ALIGN="CENTER" class="rating"><%= quick_stand.rating %></td>
+    <td><a href ='mailto:<%= quick_stand.email %>'><%= quick_stand.email %></a></td>
+    <td><%= link_to 'Show', quick_stand %></td>
+    <td><%= link_to 'Edit', edit_quick_stand_path(quick_stand) %></td>
+    <td><%= link_to 'Destroy', quick_stand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Quick stand', new_quick_stand_path %>
+<script type="text/javascript">
+$('document').ready( function () {
+    
+    $.each($('tr td:nth-child(7)'), function() { if ($(this).text() == "3") $(this).css("background-color", "green")});
+    $.each($('tr td:nth-child(7)'), function() { if ($(this).text() == "2") $(this).css("background-color", "yellow")});
+    $.each($('tr td:nth-child(7)'), function() { if ($(this).text() == "1") $(this).css("background-color", "red")});
+    $('.rating').html(function(i, v){
+    return v.replace(/(\d)/g, '<img width="20px" src=' + '/assets/' + '$1.png />');
+});
+
+});
+</script>
