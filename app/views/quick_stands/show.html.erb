@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-==================== <%= @quick_stand.created_at.strftime("%A, %B #{@quick_stand.created_at.day.ordinalize}, %Y") %> =========================
+================ <%= @quick_stand.created_at.strftime("%A, %B #{@quick_stand.created_at.day.ordinalize}, %Y") %> ====================
 <p>
   <b>Developer:</b>
   <%= @quick_stand.developer %>
@@ -34,7 +34,7 @@
   <b>Email:</b>
   <%= @quick_stand.email %>
 </p>
-================================================================
+======================================================
 <br/>
 <%= link_to 'Edit', edit_quick_stand_path(@quick_stand) %> |
 <%= link_to 'Back', quick_stands_path %>
