@@ -1,3 +1,8 @@
+<style>
+  div {
+    display: inline-block;
+  }
+</style>
 <%= form_for(@quick_stand) do |f| %>
   <% if @quick_stand.errors.any? %>
     <div id="error_explanation">
@@ -13,19 +18,19 @@
 
   <div class="field">
     <%= f.label :do_today %><br />
-    <%= f.text_field :do_today %>
+    <%= f.text_area :do_today %>
   </div>
   <div class="field">
     <%= f.label :did_yesterday %><br />
-    <%= f.text_field :did_yesterday %>
+    <%= f.text_area :did_yesterday %>
   </div>
   <div class="field">
     <%= f.label :blockers %><br />
-    <%= f.text_field :blockers %>
+    <%= f.text_area :blockers %>
   </div>
   <div class="field">
     <%= f.label :notes %><br />
-    <%= f.text_field :notes %>
+    <%= f.text_area :notes %>
   </div>
   <div class="field">
     <%= f.label :rating %><br />
